@@ -9,7 +9,15 @@ const PORT = process.env.PORT || 3000
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + './public/index.html'))
+  res.sendFile(path.join(__dirname, './public/index.html'))
+})
+
+app.get('/index.js', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.js'))
+})
+
+app.get('/style.css', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/style.css'))
 })
 // TODO: declare the GET route /api/city/:city
 // app.get('/public', (req, res) => {
@@ -22,7 +30,6 @@ app.get('/', (req, res) => {
 // jobs (with value of the getJobs function)
 // If no city info or jobs are found,
 // the endpoint should return a 404 status
-
 
 
 
